@@ -2,7 +2,7 @@
 
 # spec/12_person_spec.rb
 
-require 'problems/12_person'
+require 'problems/03_person'
 
 RSpec.describe Person do
   it 'stores name and age' do
