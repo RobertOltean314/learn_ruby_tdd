@@ -25,15 +25,29 @@ RSpec.describe Person do
   # BONUS - WRITE MORE TESTS
   # =========================
   #
-  # 1. Edge case: age = 18 (adult or not?)
-  # 2. Negative age:
+  # 1. Negative age:
   #    - Should it raise an error?
   #    - Or allow it?
   #
-  # 3. Name edge cases:
+  # 2. Name edge cases:
   #    - nil name
   #    - empty string ""
   #
   # 👉 You decide the behavior, then test it.
   #
+  it 'does not accept negative age' do
+    expect { Person.new('Alex', -10) }.to raise_error(ArgumentError)
+  end
+
+  it 'does not accept nil age' do
+    expect { Person.new('Alex') }.to raise_error(ArgumentError)
+  end
+
+  it 'does not accept empty name' do
+    expect { Person.new('', 18) }.to raise_error(ArgumentError)
+  end
+
+  it 'doesn not accept nil name' do
+    expect { Person.new(18) }.to raise_error(ArgumentError)
+  end
 end
