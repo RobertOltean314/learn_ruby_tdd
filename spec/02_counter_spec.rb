@@ -25,10 +25,26 @@ RSpec.describe Counter do
   # =========================
   # BONUS - WRITE MORE TESTS
   # =========================
-  #
-  # 1. Test decrement
-  # 2. Test multiple increments (e.g. increment 3 times)
-  # 3. Allow initializing with custom value:
-  #    Counter.new(10) -> value should be 10
-  #
+
+  # Test initialize counter with custom value
+
+  it 'creates the Counter with custom value' do
+    # Arrange
+    counter = Counter.new(5)
+
+    # Assert
+    expect(counter.value).to eq(5)
+  end
+
+  # Test multiple increments (e.g. increment 3 times)
+  it 'increments multimple times' do
+    # Arrange
+    counter = Counter.new(10)
+
+    # Act
+    3.times { counter.increment }
+
+    # Assert
+    expect(counter.value).to eq(13)
+  end
 end
