@@ -2,7 +2,7 @@
 
 # spec/15_car_spec.rb
 
-require 'problems/15_car'
+require 'problems/06_car'
 
 RSpec.describe Car do
   it 'has an engine' do
@@ -12,7 +12,7 @@ RSpec.describe Car do
 
   it 'can start engine' do
     car = Car.new
-    expect(car.start).to eq('Engine started')
+    expect(car.start).to eq(:running)
   end
 
   # =========================
@@ -31,4 +31,8 @@ RSpec.describe Car do
   # 4. Test interaction:
   #    Car delegates behavior to Engine
   #
+  it 'can stop engine' do
+    car = Car.new
+    expect(car.stop).to eq(:not_running)
+  end
 end
