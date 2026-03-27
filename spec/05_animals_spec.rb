@@ -1,6 +1,6 @@
 # spec/14_animals_spec.rb
 
-require 'problems/14_animals'
+require 'problems/05_animals'
 
 RSpec.describe Animal do
   it 'returns generic sound' do
@@ -13,6 +13,10 @@ RSpec.describe Dog do
   it 'barks' do
     dog = Dog.new
     expect(dog.speak).to eq('Woof')
+  end
+
+  it 'lives' do
+    expect(Dog.new.alive?).to eq true
   end
 end
 
@@ -30,4 +34,13 @@ end
 #
 # 3. Add another method in Animal (e.g. `alive?`)
 #    and test it across subclasses
-#
+RSpec.describe Cat do
+  it 'meows' do
+    cat = Cat.new
+    expect(cat.speak).to eq('Meow')
+  end
+
+  it 'lives' do
+    expect(Cat.new.alive?).to eq true
+  end
+end
