@@ -42,9 +42,7 @@ RSpec.describe Counter do
     counter = Counter.new(10)
 
     # Act
-    counter.increment
-    counter.increment
-    counter.increment
+    3.times { counter.increment }
 
     # Assert
     expect(counter.value).to eq(13)
