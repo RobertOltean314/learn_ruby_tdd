@@ -18,13 +18,13 @@ class Person # rubocop:disable Style/Documentation
   private
 
   def validate_age!(age)
+    raise ArgumentError unless age.is_a?(Numeric)
     raise ArgumentError if age.nil?
     raise ArgumentError unless age.positive?
-    raise ArgumentError unless age.is_a?(Numeric)
   end
 
   def validate_name!(name)
     raise ArgumentError if name.nil?
-    raise ArgumentError if name.empty?
+    raise ArgumentError if name.strip.empty?
   end
 end
