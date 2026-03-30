@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Animal # rubocop:disable Style/Documentation
+class Animal
   def speak
     'Some sound'
   end
@@ -10,13 +10,13 @@ class Animal # rubocop:disable Style/Documentation
   end
 end
 
-class Dog < Animal # rubocop:disable Style/Documentation
+class Dog < Animal
   def speak
     'Woof'
   end
 end
 
-class Cat < Animal # rubocop:disable Style/Documentation
+class Cat < Animal
   def speak
     'Meow'
   end
