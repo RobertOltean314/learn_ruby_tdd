@@ -8,13 +8,13 @@ class BankAccount # rubocop:disable Style/Documentation
   end
 
   def deposit(amount)
-    raise ArgumentError, 'You\'re trying to pass a negative amount' if amount.negative?
+    raise ArgumentError, 'The amount you\'re trying to deposit must be positive' if amount.negative?
 
     @balance += amount
   end
 
   def withdraw(amount)
-    raise ArgumentError, 'You\'re trying to pass a negative amount' if amount.negative?
+    raise ArgumentError, 'The amount you\'re trying to withdraw must be positive' if amount.negative?
 
     if amount > @balance
       @balance

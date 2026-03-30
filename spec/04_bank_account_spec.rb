@@ -51,10 +51,16 @@ RSpec.describe BankAccount do
   end
 
   it 'fails if trying to deposit negative balance' do
-    expect { BankAccount.new(100).deposit(-100) }.to raise_error(ArgumentError)
+    expect do
+      BankAccount.new(100).deposit(-100)
+    end.to raise_error(ArgumentError,
+                       "The amount you\'re trying to deposit must be positive")
   end
 
   it 'fails if trying to withdraw negative amount' do
-    expect { BankAccount.new(100).withdraw(-50) }.to raise_error(ArgumentError)
+    expect do
+      BankAccount.new(100).withdraw(-50)
+    end.to raise_error(ArgumentError,
+                       "The amount you\'re trying to withdraw must be positive")
   end
 end
