@@ -2,7 +2,7 @@
 
 # spec/13_bank_account_spec.rb
 
-require 'problems/13_bank_account'
+require 'problems/04_bank_account'
 
 RSpec.describe BankAccount do
   it 'starts with initial balance' do
@@ -44,4 +44,23 @@ RSpec.describe BankAccount do
   #
   # 5. Test invalid initialization (e.g. negative balance)
   #
+  it 'remains with balance 0' do
+    acc = BankAccount.new(100)
+    acc.withdraw(100)
+    expect(acc.balance).to eq(0)
+  end
+
+  it 'fails if trying to deposit negative balance' do
+    expect do
+      BankAccount.new(100).deposit(-100)
+    end.to raise_error(ArgumentError,
+                       "The amount you\'re trying to deposit must be positive")
+  end
+
+  it 'fails if trying to withdraw negative amount' do
+    expect do
+      BankAccount.new(100).withdraw(-50)
+    end.to raise_error(ArgumentError,
+                       "The amount you\'re trying to withdraw must be positive")
+  end
 end
